@@ -152,4 +152,11 @@ $(".list-group").on("change", "input[type='text']", function () {
 
   // Pass task's <li> element into auditTask() to check new due date
   auditTask($(taskSpan).closest(".list-group-item"));
-};
+
+
+  setInterval(function () {
+    $(".card .list-group-item").each(function(index, el) {
+      auditTask(el);
+    });
+  }, 5000);
+}
